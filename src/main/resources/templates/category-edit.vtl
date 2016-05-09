@@ -1,0 +1,16 @@
+<h1>$category.getName()</h1>
+
+<h4>Change the name of this category:</h4>
+
+<form action='/categories/$category.getId()' method='post'>
+  <input id="category_id" name="category_id" type="hidden" value="$category.getId()">
+  <input id="name" name="name">
+  <button type="submit" class="btn btn-info">Submit new name</button>
+</form>
+
+<form action='/categories/$category.getId()/delete' method='post'>
+  <input id="category_id" name="category_id" type="hidden" value="$category.getId()">
+  <button type="submit" class="btn btn-info">Delete this category</button>
+</form>
+
+<p><a href="/categories/$category.getId()">Go back</a></p>

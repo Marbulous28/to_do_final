@@ -1,0 +1,16 @@
+<h1>$task.getDescription()</h1>
+
+<h4>Change the description of this task:</h4>
+
+<form action='/tasks/$task.getId()' method='post'>
+  <input id="task_id" name="task_id" type="hidden" value="$task.getId()">
+  <input id="description" name="description">
+  <button type="submit" class="btn btn-info">Submit new name</button>
+</form>
+
+<form action='/tasks/$task.getId()/delete' method='post'>
+  <input id="task_id" name="task_id" type="hidden" value="$task.getId()">
+  <button type="submit" class="btn btn-info">Delete this task</button>
+</form>
+
+<p><a href="/tasks/$task.getId()">Go back</a></p>

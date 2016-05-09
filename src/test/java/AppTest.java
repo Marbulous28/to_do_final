@@ -90,6 +90,60 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("<li>");
     assertThat(pageSource()).contains("Household chores");
   }
+
+  @Test
+  public void taskUpdate() {
+    Task myTask = new Task("Clean");
+    myTask.save();
+    String taskPath = String.format("http://localhost:4567/tasks/%d/edit", myTask.getId());
+    goTo(taskPath);
+    fill("#description").with("Dance");
+    click("button", withText("Submit new name"));
+    assertThat(pageSource()).contains("Dance");
+  }
+
+  @Test
+  public void categoryUpdate() {
+    Category myCategory = new Category("Tuesday");
+    myCategory.save();
+    String categoryPath = String.format("http://localhost:4567/categories/%d/edit", myCategory.getId());
+    goTo(categoryPath);
+    fill("#name").with("Wednesday");
+    click("button", withText("Submit new name"));
+    assertThat(pageSource()).contains("Wednesday");
+  }
+
+  @Test
+  public void taskDelete() {
+    Task myTask = new Task("Clean");
+    myTask.save();
+    String taskPath = String.format("http://localhost:4567/tasks/%d/edit", myTask.getId());
+    goTo(taskPath);
+    click("button", withText("Delete this task"));
+    assertEquals(0, Task.all().size());
+  }
+
+  @Test
+  public void categoryDelete() {
+    Category myCategory = new Category("Clean");
+    myCategory.save();
+    String categoryPath = String.format("http://localhost:4567/categories/%d/edit", myCategory.getId());
+    goTo(categoryPath);
+    click("button", withText("Delete this category"));
+    assertEquals(0, Category.all().size());
+  }
+
+  // @Test
+  // public void taskDelete() {
+  //   Category myCategory = new Category("Home");
+  //   myCategory.save();
+  //   Task myTask = new Task("Clean", myCategory.getId());
+  //   myTask.save();
+  //   String taskPath = String.format("http://localhost:4567/categories/%d/tasks/%d", myCategory.getId(), myTask.getId());
+  //   goTo(taskPath);
+  //   submit("#delete-task");
+  //   assertEquals(0, Task.all().size());
+  // }
 }
 //   @Test
 //   public void rootTest() {
@@ -164,28 +218,5 @@ public class AppTest extends FluentTest {
 //     assertThat(pageSource()).contains("Return to Home");
 //   }
 //
-//   @Test
-//   public void taskUpdate() {
-//     Category myCategory = new Category("Home");
-//     myCategory.save();
-//     Task myTask = new Task("Clean", myCategory.getId());
-//     myTask.save();
-//     String taskPath = String.format("http://localhost:4567/categories/%d/tasks/%d", myCategory.getId(), myTask.getId());
-//     goTo(taskPath);
-//     fill("#description").with("Dance");
-//     submit("#update-task");
-//     assertThat(pageSource()).contains("Dance");
-//   }
-//
-//   @Test
-//   public void taskDelete() {
-//     Category myCategory = new Category("Home");
-//     myCategory.save();
-//     Task myTask = new Task("Clean", myCategory.getId());
-//     myTask.save();
-//     String taskPath = String.format("http://localhost:4567/categories/%d/tasks/%d", myCategory.getId(), myTask.getId());
-//     goTo(taskPath);
-//     submit("#delete-task");
-//     assertEquals(0, Task.all().size());
-//   }
+
 // }

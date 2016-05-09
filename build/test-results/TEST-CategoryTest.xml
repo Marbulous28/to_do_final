@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CategoryTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-05-09T17:13:57" hostname="epicodus-30.local" time="0.128">
+<testsuite name="CategoryTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-05-09T18:07:32" hostname="epicodus-30.local" time="0.14">
   <properties/>
-  <testcase name="equals_returnsTrueIfNamesAretheSame" classname="CategoryTest" time="0.004"/>
-  <testcase name="getName_categoryInstantiatesWithName_String" classname="CategoryTest" time="0.004"/>
-  <testcase name="Category_instantiatesCorrectlt_true" classname="CategoryTest" time="0.004"/>
-  <testcase name="getTasks_returnsAllTasks_List" classname="CategoryTest" time="0.022"/>
-  <testcase name="all_emptyAtFirst" classname="CategoryTest" time="0.007"/>
-  <testcase name="find_findCategoryInDatabase_true" classname="CategoryTest" time="0.013"/>
-  <testcase name="delete_deletesAllTasksAndCategoriesAssociations" classname="CategoryTest" time="0.025"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame" classname="CategoryTest" time="0.005"/>
+  <testcase name="getName_categoryInstantiatesWithName_String" classname="CategoryTest" time="0.005"/>
+  <testcase name="Category_instantiatesCorrectlt_true" classname="CategoryTest" time="0.005"/>
+  <testcase name="getTasks_returnsAllTasks_List" classname="CategoryTest" time="0.024"/>
+  <testcase name="all_emptyAtFirst" classname="CategoryTest" time="0.009"/>
+  <testcase name="find_findCategoryInDatabase_true" classname="CategoryTest" time="0.015"/>
+  <testcase name="delete_deletesAllTasksAndCategoriesAssociations" classname="CategoryTest" time="0.027"/>
   <testcase name="save_savesIntoDatabase_true" classname="CategoryTest" time="0.013"/>
   <testcase name="save_assignsIdToObject" classname="CategoryTest" time="0.012"/>
-  <testcase name="addTask_addsTaskToCategory_true" classname="CategoryTest" time="0.023"/>
+  <testcase name="addTask_addsTaskToCategory_true" classname="CategoryTest" time="0.022"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
